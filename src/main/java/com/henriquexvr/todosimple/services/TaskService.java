@@ -39,7 +39,7 @@ public class TaskService {
         return this.taskRepository.save(newObj);
     }
 
-    public Task delete(Long id){
+    public void delete(Long id){
         findById(id);
         try{
             this.taskRepository.deleteById(id);
@@ -48,6 +48,4 @@ public class TaskService {
             throw new RuntimeException("Não é possivel deletar pois ha entidades relacionadas!");
         }
     }
-
-
 }
